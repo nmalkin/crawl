@@ -1,0 +1,10 @@
+chardet==2.3.0
+dnspython3==1.12.0
+html5lib==0.9999999
+namedlist==1.7
+psutil==3.2.1
+six==1.9.0
+SQLAlchemy==1.0.8
+tornado==4.2.1
+trollius==2.0
+wpull==1.2.1

@@ -1,0 +1,34 @@
+#!/bin/sh
+
+mkdir -p out
+cd out
+date >> last_run
+
+mkdir -p in_progress complete
+
+# unique identifer for current run, to avoid conflicts with files from a previous run
+timestamp=`date +"%s"`
+
+echo "Starting crawl at $timestamp with $START_URL"
+
+exec wpull $START_URL \
+    --database db \
+    --delete-after \
+    --directory-prefix /tmp \
+    --http-compression \
+    --python-script ../hook.py \
+    --random-wait \
+    --recursive \
+    --rotate-dns \
+    --timeout 30 \
+    --tries 3 \
+    --user-agent archiver \
+    --verbose \
+    --wait 1 \
+    --waitretry 30 \
+    --warc-append \
+    --warc-cdx \
+    --warc-file in_progress/$timestamp \
+    --warc-max-size 100000000 \
+    --warc-move complete \
+    --warc-tempdir /tmp
