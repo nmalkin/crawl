@@ -20,6 +20,7 @@ exec wpull $START_URL \
     --random-wait \
     --recursive \
     --rotate-dns \
+    --span-hosts \
     --timeout 30 \
     --tries 3 \
     --user-agent archiver \
