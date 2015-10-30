@@ -23,7 +23,7 @@ exec wpull $START_URL \
     --span-hosts \
     --timeout 30 \
     --tries 3 \
-    --user-agent archiver \
+    --user-agent spider \
     --verbose \
     --wait 1 \
     --waitretry 30 \
